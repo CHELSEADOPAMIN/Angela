@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whimsy Bees</title>
+    <meta name="description" content="A whimsical, cursor-led garden where you meet bees." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg__mesh"></div>
+      <div class="bg__airbrush"></div>
+      <div class="bg__halftone"></div>
+      <div class="bg__grain"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__title">Whimsy Bees</span>
+      </div>
+      <p class="brand__hint">Move your cursor — a bumblebee follows you. Click the flower to meet bees.</p>
+    </header>
+
+    <main class="stage" id="stage" role="application" aria-label="Interactive garden">
+      <div class="flowers" id="flowers" aria-label="Flowers"></div>
+
+      <div class="bee" id="bee" role="img" aria-label="A bumblebee following your cursor">
+        <div class="bee__shadow" aria-hidden="true"></div>
+        <div class="bee__wrap" aria-hidden="true">
+          <div class="bee__wings">
+            <div class="bee__wing bee__wing--left"></div>
+            <div class="bee__wing bee__wing--right"></div>
+          </div>
+          <div class="bee__body">
+            <div class="bee__stripe bee__stripe--1"></div>
+            <div class="bee__stripe bee__stripe--2"></div>
+            <div class="bee__stripe bee__stripe--3"></div>
+            <div class="bee__face">
+              <div class="bee__eye bee__eye--left"></div>
+              <div class="bee__eye bee__eye--right"></div>
+              <div class="bee__cheek bee__cheek--left"></div>
+              <div class="bee__cheek bee__cheek--right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud" aria-hidden="true">
+        <div class="hud__pill" id="hudPill">Find a flower…</div>
+      </div>
+    </main>
+
+    <dialog class="modal" id="beeModal" aria-labelledby="modalTitle">
+      <form method="dialog" class="modal__chrome">
+        <button class="modal__close" value="close" aria-label="Close">×</button>
+      </form>
+      <div class="modal__content">
+        <div class="modal__head">
+          <h2 class="modal__title" id="modalTitle">Bees</h2>
+          <p class="modal__subtitle" id="modalSubtitle"></p>
+        </div>
+        <div class="modal__grid" id="beeGrid" aria-label="Bee cards"></div>
+      </div>
+    </dialog>
+
+    <script src="./bees.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
+
